@@ -1,1 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
+<title>云付</title>
+<style>
+	body{
+		background-color:#444;
+		font-size:14px;
+	}
+	h3{
+		font-size:60px;
+		color:#eee;
+		text-align:center;
+		padding-top:30px;
+		font-weight:normal;
+	}
+</style>
+</head>
+
+<body>
+    
+  
+<script>
+const searchParams = new URLSearchParams(window.location.search);
+const s = searchParams.get('tn_str'); // 输出: John
+const paydata = btoa("tn=" + s + ",resultURL=exit,scheme=,packageName=,usetestmode=false")
+console.log(paydata);
+
+window.location.href = "upwrp://uppayservice/?style=token&paydata=" + paydata;
+
+ 
+</script>
+
+</body>
+</html>
